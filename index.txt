@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Remover</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+    <h1>Remove Image Background</h1>
+
+    <form action="/remove-bg" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+        <button type="submit">Remove Background</button>
+    </form>
+
+    {% if output_image %}
+        <h2>Result:</h2>
+        <img src="{{ output_image }}" width="300">
+        <br><br>
+        <a href="{{ output_image }}" download>
+            <button>Download Image</button>
+        </a>
+    {% endif %}
+
+</body>
+</html>
